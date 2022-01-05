@@ -4,12 +4,12 @@ const socket = require("socket.io");
 const app = express();
 app.use(express.static("public"));
 
-// let port = 3000 || process.env.PORT;
-// let server = app.listen(port, () => {
-//   console.log("Listening to port " + port);
-// });
-var port_number = server.listen(process.env.PORT || 3000);
-app.listen(port_number);
+let port = process.env.PORT || 3000;
+let server = app.listen(port, () => {
+  console.log("Listening to port " + port);
+});
+// var port_number = server.listen(process.env.PORT || 3000);
+// app.listen(port_number);
 let io = socket(server);
 
 io.on("connection", (socket) => {
