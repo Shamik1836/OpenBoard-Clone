@@ -141,17 +141,12 @@ eraser.addEventListener("click", (e) => {
 });
 
 download.addEventListener("click", (e) => {
-  // let url = canvas.toDataURL();
-  // let a = document.createElement("a");
-  // a.href = url;
-  // a.download = "board.jpg";
-  // a.click();
-  var a = document.createElement('a');
-a.href = "img.png";
-a.download = "output.png";
-document.body.appendChild(a);
-a.click();
-document.body.removeChild(a);
+  let url = canvas.toDataURL();
+
+  let a = document.createElement("a");
+  a.href = url;
+  a.download = "board.jpg";
+  a.click();
 });
 
 socket.on("beginPath", (data) => {
